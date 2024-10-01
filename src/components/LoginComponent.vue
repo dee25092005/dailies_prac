@@ -1,11 +1,13 @@
 <template>
-    <div class="hold-transition login-page">
+    <div class="hold-transition login-page login-background">
         <div class="login-box">
   <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
+  <div class="card card-outline ">
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-      <h2 class="text-center text-primary"><b>ເຂົ້າສູ່ລະບົບ</b></h2>
+      <p class="login-box-msg">
+        <img src= "images/logo1.jpg" alt="" style="{radius:100%; width:50% ; height: 60%; border-radius:60%;}">
+      </p>
+      <h1 class="text-center text-primary"><b>ເຂົ້າສູ່ລະບົບ</b></h1>
       <form @submit.prevent="HandleLogin">
         <div class="input-group mb-3">
           <input type="text" v-model="phone" class="form-control" placeholder="ເບີໂທ">
@@ -23,20 +25,8 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                ຈົດຈຳ
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
+        <div class="w-100">
+          <button type="submit" class="btn btn-primary btn-block text-bold"><i class="fas fa-sign-out-alt"></i>Log In</button>
         </div>
       </form>
 
@@ -51,6 +41,7 @@
 
 <script>
 import axios from "axios";
+import Swal from "sweetalert2";
 export default {
   name: 'LoginComponent',
   data(){
@@ -72,12 +63,42 @@ export default {
       console.log("login successfully");
 
       localStorage.setItem('token',response.data.token);
+      this.ShowWelcomeMessage();
       this.$router.push('/dashboard')
     
       } catch(error){
-      alert("Login error");
+      this.ShowErrorMassage();
     }
+  },
+
+
+  //Show Welcome massage
+
+async ShowWelcomeMessage(){
+  Swal.fire({
+    title: "ຍິນດີຕ້ອນຮັບ",
+    text: "ເຂົ້າສູ່ລະບົບສຳເລັດເເລ້ວ",
+    icon: "success",
+    timer: 2000, 
+    timerProgressBar: true,
+    didOpen: () =>{
+      Swal.showLoading();
+    }
+  });
+},
+ //show error massage
+ async ShowErrorMassage(){
+  Swal.fire({
+    title: "ເກີດຂໍ້ຜິດພາດ",
+    text: "ກະລຸນາລອງໃຫມ່ອີກຄັ້ງ",
+    icon: "warning",
+    timer: 2000, 
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+   });
   }
-}
+ }
 }
 </script>

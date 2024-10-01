@@ -11,7 +11,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">ລອງລະບົບ</a>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <router-link to="/dashboard" href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-home"></i>
               <p class = "text-bold">
                 ຫນ້າຫຼັກ
               </p>
@@ -32,7 +32,55 @@
             <router-link to="/admin" href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p class = "text-bold">
-                ເເອັດມິນ
+                Admin (ເເອັດມິນ)
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item menu-open">
+            <router-link to="/modules" href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p class = "text-bold">
+                modules (ໂມດູລ)
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item menu-open">
+            <router-link to="/notes" href="#" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
+              <p class = "text-bold">
+                Notes 
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item menu-open">
+            <router-link to="/income_expense" href="#" class="nav-link">
+              <i class="nav-icon fas fa-money-bill"></i>
+              <p class = "text-bold">
+                ລາຍຮັບ-ລາຍຈ່າຍ
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item menu-open">
+            <router-link to="/plan" href="#" class="nav-link">
+              <i class="nav-icon fas fa-book-open"></i>
+              <p class = "text-bold">
+                Plan (ເເຜນ)
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item menu-open">
+            <router-link to="/school-tables" href="#" class="nav-link">
+              <i class="nav-icon fas fa-school"></i>
+              <p class = "text-bold">
+                ຕາຕະລາງ 
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item menu-open">
+            <router-link to="/daily" href="#" class="nav-link">
+              <i class="nav-icon fas fa-school"></i>
+              <p class = "text-bold">
+                daily
               </p>
             </router-link>
           </li>
@@ -54,3 +102,4 @@ export default {
     name: "SidebarComponent"
 }
 </script>
+
